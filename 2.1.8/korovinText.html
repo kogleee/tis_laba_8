@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas shapes</title>
+<script>
+    function draw() {
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        
+        
+        
+        ctx.beginPath();
+        ctx.fillStyle = 'green';
+        ctx.arc(250, 170, 90, 0, 2*Math.PI);
+        ctx.fill(); 
+        
+        ctx.beginPath();
+        ctx.fillStyle = "white"
+        ctx.font = "26px serif"
+        ctx.fillText("Коровин", 205, 175)
+               
+    }
+</script>
+</head>
+
+<body onload="draw();">
+<canvas id="myCanvas" width="350" height="350">
+</canvas>
+</body>
+
+</html> 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5 canvas shapes</title>
+<script>
+    function draw() {
+        
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+        
+        
+        
+        //Халупа
+        ctx.beginPath();
+        ctx.fillStyle = '#8a6642';
+        ctx.fillRect(80,200,200,200)
+        ctx.fill(); 
+
+        ctx.beginPath();
+        ctx.fillStyle = '#6B2009'
+        ctx.moveTo(60, 200);
+        ctx.lineTo(300, 200);
+        ctx.lineTo(170, 50);
+        ctx.closePath();
+        ctx.fill(); 
+
+        ctx.beginPath();
+        ctx.fillStyle ="#d8bfd8"
+        ctx.fillRect(90,300,50,100)
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle = "#8a6642"
+        ctx.arc(100, 350, 5, 0, 2*Math.PI)
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillStyle ="#51DBE5"
+        ctx.fillRect(200,300,50,50)
+        ctx.fill();
+
+        //Дерево
+
+        ctx.beginPath();
+        ctx.fillStyle = '#433614';
+        ctx.fillRect(400,220, 30,180)
+        ctx.fill(); 
+
+        ctx.beginPath()
+        ctx.fillStyle = '#0A9718'
+        ctx.arc(380, 220, 60, 0, 2*Math.PI)
+        ctx.fill();
+
+        ctx.beginPath()
+        ctx.fillStyle = '#0A9718'
+        ctx.arc(450, 220, 60, 0, 2*Math.PI)
+        ctx.fill();
+
+        ctx.beginPath()
+        ctx.fillStyle = '#0A9718'
+        ctx.arc(415, 150, 60, 0, 2*Math.PI)
+        ctx.fill();
+
+        //Солнце-луна
+       
+        ctx.beginPath();
+        let style = "#5E7475";
+        
+
+        function changeTime(){
+            if (style == "yellow"){
+                style =  "#5E7475"
+                ctx.fillStyle = `${style}`;
+                ctx.arc(530, 70, 50, 0 , 2*Math.PI);
+                ctx.fill();
+                canvas.style.background = "#293C3D"
+            }
+            else{
+                style = "yellow" 
+                ctx.fillStyle = `${style}`;
+                ctx.arc(530, 70, 50, 0 , 2*Math.PI);
+                ctx.fill();
+                canvas.style.background = "#14C0C6"
+            } 
+        }
+        changeTime()
+        setInterval(changeTime, 2500)
+      
+        
+
+       
+
+        
+        
+        
+               
+    }
+</script>
+</head>
+
+<body onload="draw();">
+<canvas id="myCanvas" width="600" height="400">
+</canvas>
+</body>
+
+</html> 
